@@ -1,0 +1,35 @@
+import java.util.*;
+public class mark_toys
+{
+    int solution(int ar[],int k)
+    {
+        int max_toys=0;
+        if( ar.length ==0 || k==0 )
+        return max_toys;
+        Arrays.sort(ar);
+        for(int i=0 ; i<ar.length ; i++)
+        {
+            k-=ar[i];
+            if( k<0 )
+               return max_toys;
+               max_toys++;
+            
+        }
+        return max_toys;
+    }
+    public static void main(String args[])
+{
+Scanner in= new Scanner(System.in);
+int n,range;
+n=in.nextInt();
+range=in.nextInt();
+int arr[]=new int[n];
+for(int i=0;i<n;i++)
+{
+arr[i]=in.nextInt();
+}
+   mark_toys ob=new mark_toys();
+ int result = ob.solution(arr,range);
+   System.out.print(result);
+}
+}
